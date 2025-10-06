@@ -1,17 +1,20 @@
 # Methane Emission Anomaly Detection Pipeline
 
-An end-to-end pipeline for detecting anomalous methane emission peaks using unsupervised machine learning. This system processes raw sensor data, identifies emission peaks, filters anomalous measurements using Isolation Forest, and calculates AUC metrics for clean data.
+An end-to-end pipeline for detecting anomalous methane emission peaks using unsupervised machine learning. <br> 
+This system processes raw sensor data, identifies emission peaks, filters anomalous measurements using Isolation Forest, and calculates AUC metrics for clean data.
 
 ## Pipeline workflow
 Raw Sensor Data → Preprocessing → Peak Detection → Feature Extraction →
 Anomaly Detection → AUC Calculation → Cleaned Data Output
 
 ## Directory Structure
-iForest_Pipeline/
-├── preprocess_function.py # Data preprocessing & feature extraction
-├── iforest_model.py # Isolation Forest training & anomaly scoring
-├── auc_calculation.py # AUC calculation for valid peaks
-└── run_pipeline.py # Main pipeline execution script
+iForest_Pipeline/ <br>
+├── MergeData_AUCCO2Filter_IForestFilter.py # Main pipeline execution script  <br>
+└── iForest_modules/ # Core pipeline modules <br>
+&nbsp;&nbsp; ├── preprocess_function.py # Data preprocessing & feature extraction <br>
+&nbsp;&nbsp; ├── iforest_model.py # Isolation Forest training & anomaly scoring <br>
+&nbsp;&nbsp; └── auc_calculation.py # AUC calculation for valid peaks <br>
+
 
 ### Feature Engineering Insights
 - **Peak Boundary Features**: Heavily weighted by model to identify peaks with unreasonable start/end points
